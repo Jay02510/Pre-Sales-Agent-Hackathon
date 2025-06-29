@@ -42,8 +42,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
             ${Icon && iconPosition === 'right' ? 'pr-10' : ''}
             ${hasError 
               ? 'border-red-300 bg-red-50 focus:ring-red-500' 
-              : 'border-gray-300 focus:ring-blue-500'
-            }
+              : 'border-gray-300 focus:ring-blue-500 shadow-sm'}
             ${className}
           `}
           {...props}

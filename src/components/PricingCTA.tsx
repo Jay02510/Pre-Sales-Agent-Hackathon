@@ -1,5 +1,5 @@
 import React from 'react';
-import { CreditCard, Check, Star, Zap, Shield, ArrowRight } from 'lucide-react';
+import { CreditCard, Check, Star, Zap, Shield, ArrowRight, Sparkles } from 'lucide-react';
 import { Card, Button } from './ui';
 
 interface PricingCTAProps {
@@ -37,7 +37,7 @@ const PricingCTA: React.FC<PricingCTAProps> = ({ onSignIn }) => {
         'Priority support'
       ],
       popular: true,
-      icon: Star,
+      icon: Sparkles,
       color: 'bg-purple-100 text-purple-600'
     },
     {

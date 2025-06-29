@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Copy, Check, Mail, Link, Share2, Users, Lock, Globe } from 'lucide-react';
+import { X, Copy, Check, Mail, Link, Share2, Users, Lock, Globe, Sparkles } from 'lucide-react';
 
 interface ShareReportModalProps {
   isOpen: boolean;
@@ -61,8 +61,8 @@ export const ShareReportModal: React.FC<ShareReportModalProps> = ({ isOpen, onCl
       <div className="bg-white rounded-2xl p-8 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center space-x-3">
-            <div className="p-2 bg-purple-100 rounded-lg">
-              <Share2 className="h-6 w-6 text-purple-600" />
+            <div className="p-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg">
+              <Sparkles className="h-6 w-6" />
             </div>
             <div>
               <h2 className="text-2xl font-bold text-gray-900">Share Report</h2>
@@ -198,7 +198,7 @@ export const ShareReportModal: React.FC<ShareReportModalProps> = ({ isOpen, onCl
                   />
                   <button
                     onClick={handleCopyLink}
-                    className="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-colors"
+                    className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-3 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-colors"
                   >
                     {copied ? <Check className="h-5 w-5" /> : <Copy className="h-5 w-5" />}
                   </button>
@@ -222,7 +222,7 @@ export const ShareReportModal: React.FC<ShareReportModalProps> = ({ isOpen, onCl
                   />
                   <button
                     onClick={handleAddEmail}
-                    className="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-colors"
+                    className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-3 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-colors"
                   >
                     Add
                   </button>
@@ -281,7 +281,7 @@ export const ShareReportModal: React.FC<ShareReportModalProps> = ({ isOpen, onCl
               </button>
               <button
                 onClick={handleShare}
-                className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors flex items-center space-x-2"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-colors flex items-center space-x-2 shadow-md"
               >
                 <Share2 className="h-4 w-4" />
                 <span>Share Report</span>

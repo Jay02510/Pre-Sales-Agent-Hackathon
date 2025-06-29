@@ -15,6 +15,7 @@ import CostMonitor from './components/CostMonitor';
 import ServiceStatusChecker from './components/ServiceStatusChecker';
 import PricingCTA from './components/PricingCTA';
 import FreeTrial from './components/FreeTrial';
+import BackendStatusChecker from './components/BackendStatusChecker';
 import { Report } from './types/database';
 import { ReportService } from './services/reportService';
 import { AuthService } from './services/authService';
@@ -174,6 +175,10 @@ function App() {
     setShowFreeTrialPrompt(false);
   };
 
+  const handleBackendStatusChange = (status: 'connected' | 'disconnected' | 'checking') => {
+    setBackendStatus(status);
+  };
+
   if (authLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100 flex items-center justify-center">
@@ -215,27 +220,8 @@ function App() {
 
         {/* Backend Status Indicator */}
         {state === 'input' && (
-          <div className={`mb-4 p-3 rounded-lg text-sm inline-flex items-center space-x-2 ${
-            backendStatus === 'connected' 
-              ? 'bg-green-100 text-green-800' 
-              : backendStatus === 'disconnected'
-                ? 'bg-yellow-100 text-yellow-800'
-                : 'bg-blue-100 text-blue-800'
-          }`}>
-            <div className={`w-2 h-2 rounded-full ${
-              backendStatus === 'connected' 
-                ? 'bg-green-500' 
-                : backendStatus === 'disconnected'
-                  ? 'bg-yellow-500'
-                  : 'bg-blue-500 animate-pulse'
-            }`}></div>
-            <span>
-              {backendStatus === 'connected' 
-                ? 'Backend connected - full functionality available' 
-                : backendStatus === 'disconnected'
-                  ? 'Running in demo mode - some features limited'
-                  : 'Checking connection status...'}
-            </span>
+          <div className="mb-4">
+            <BackendStatusChecker onStatusChange={handleBackendStatusChange} />
           </div>
         )}
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 interface LoadingSpinnerProps {
   size?: 'sm' | 'md' | 'lg';
-  color?: 'blue' | 'white' | 'gray';
+  color?: 'blue' | 'white' | 'gray' | 'gradient';
   className?: string;
 }
 
@@ -20,8 +20,19 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
   const colorClasses = {
     blue: 'border-blue-600 border-t-transparent',
     white: 'border-white border-t-transparent',
-    gray: 'border-gray-600 border-t-transparent'
+    gray: 'border-gray-600 border-t-transparent',
+    gradient: 'border-t-transparent' // Special case for gradient
   };
+
+  // For gradient spinner, we need to use a different approach
+  if (color === 'gradient') {
+    return (
+      <div className={`${sizeClasses[size]} rounded-full ${className} relative`}>
+        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 animate-spin"></div>
+        <div className="absolute inset-[2px] bg-white rounded-full"></div>
+      </div>
+    );
+  }
 
   return (
     <div 
