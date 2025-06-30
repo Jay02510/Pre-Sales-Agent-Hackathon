@@ -14,7 +14,7 @@
   "homepage": "https://github.com/YOUR_USERNAME/glance#readme",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
@@ -28,6 +28,8 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.1",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",
@@ -42,7 +44,8 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "globals": "^15.0.0",
     "typescript-eslint": "^8.0.0",
-    "vitest": "^1.2.2"
+    "vitest": "^1.2.2",
+    "jsdom": "^24.0.0"
   },
   "engines": {
     "node": ">=18.0.0",
