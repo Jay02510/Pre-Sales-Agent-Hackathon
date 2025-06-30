@@ -5,9 +5,8 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist',
-    sourcemap: false,
+    sourcemap: true,
     minify: true,
-    chunkSizeWarningLimit: 1600,
     rollupOptions: {
       output: {
         manualChunks: {
