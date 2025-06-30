@@ -36,7 +36,7 @@ If your app builds but doesn't work properly:
 
 #### Client-Side Routing
 - Ensure your Vercel configuration has the proper rewrites for SPA routing
-- The `vercel.json` file should include a catch-all route to index.html
+- The `vercel.json` file should include a rewrite from any path to index.html
 
 ### 3. Blank Screen After Deployment
 
@@ -80,9 +80,8 @@ Ensure your vercel.json has the correct configuration:
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
   "env": {
     "NODE_VERSION": "18"

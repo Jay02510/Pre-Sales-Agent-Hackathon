@@ -27,7 +27,40 @@ VITE_OPENAI_API_KEY=your_openai_api_key
 
 ### 4. Deploy
 - Vercel will automatically build and deploy your app
-- Your app will be live at `https://finalsalesai.vercel.app`
+- Your app will be live at your Vercel deployment URL
+
+## Troubleshooting Deployment Issues
+
+### Common Issues
+
+#### Build Failures
+- Check build logs for specific errors
+- Ensure all dependencies are properly listed in package.json
+- Verify TypeScript configuration is correct
+
+#### Environment Variables
+- Double-check that all environment variables are correctly set in Vercel
+- Remember that environment variables are only available at build time unless prefixed with `VITE_`
+
+#### Routing Issues
+- Ensure the `rewrites` configuration in vercel.json is correct
+- This handles client-side routing for SPAs
+
+#### API Connection Issues
+- Check CORS settings if connecting to external APIs
+- Verify API keys and endpoints are correct
+
+### Quick Fixes
+
+#### Force Clean Rebuild
+In Vercel dashboard:
+1. Go to Deployments
+2. Click on the problematic deployment
+3. Click "..." → "Redeploy" → "Redeploy without cache"
+
+#### Check Logs
+- Review build logs and function logs for specific errors
+- Look for any missing dependencies or configuration issues
 
 ## App Features in Production
 
@@ -64,25 +97,5 @@ The app intelligently detects which services are configured:
 1. In Vercel: Project settings → Domains
 2. Add your custom domain
 3. Configure DNS records as instructed
-
-## Advantages of Vercel
-
-### 🚀 Performance
-- Global CDN with edge caching
-- Automatic HTTPS
-- Image optimization
-- Web Vitals monitoring
-
-### 🔄 Deployment Features
-- Preview deployments for PRs
-- Instant rollbacks
-- Branch deployments
-- Deployment protection
-
-### 🛠️ Developer Experience
-- Seamless GitHub integration
-- Deploy hooks
-- Environment variable management
-- Team collaboration
 
 Your app is production-ready! 🚀
